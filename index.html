@@ -576,15 +576,16 @@ function orderViaWhatsApp(){
     let message = "Hello Trendy Threads I would like to order:%0A";
 
     cart.forEach(item=>{
-        message += - ${item.name} x${item.quantity} ($${item.price * item.quantity})%0A;
+        message += `- ${item.name} x${item.quantity} ($${item.price * item.quantity})%0A`;
     });
 
     let total = cart.reduce((sum,item)=> sum + item.price * item.quantity,0);
 
-    message += %0ATotal: $${total}%0A%0APlease confirm my order.;
+    message += `%0ATotal: $${total}%0A%0APlease confirm my order.`;
 
-    window.open(https://wa.me/9779764341929?text=${message},'_blank');
+    window.open(`https://wa.me/9779764341929?text=${message}`,'_blank');
 }
+    
 </script>
 
 <a href="https://wa.me/9779764341929" 
